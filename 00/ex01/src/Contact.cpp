@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:47:53 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/02 20:15:20 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:17:23 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,9 @@ void Contact::Contact(void)
 void	Contact::set_contact(std::string first_name, std::string last_name, 
 		std::string nickname, std::string phone, std::string dark_secret)
 {
-	
+	this->first_name = first_name;	
+	this->last_name = last_name;	
+	this->nickname = nickname;	
+	this->phone = phone;	
+	this->dark_secret = dark_secret;	
 }

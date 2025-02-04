@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 11:56:36 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/02 19:40:03 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:03:55 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # define FAILURE 1
 # define SUCCESS 0
 
+# define STRING 1
+# define PHONE_NUMBER 2
+
 enum	options
 {
 	NONE = 0,
@@ -33,9 +36,9 @@ class PhoneBook
 {
 	public:
 		PhoneBook(void);
-		void	add_contact(std::string first_name, std::string last_name, 
-				std::string nickname, std::string phone, std::string dark_secret);
-		void	search_contact(int num, int option);
+		void		add_contact(std::string first_name, std::string last_name, 
+						std::string nickname, std::string phone, std::string dark_secret);
+		std::string	search_contact(int num, int option);
 		~PhoneBook(void);
 	private:
 		Contact contacts[8];

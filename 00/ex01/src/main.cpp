@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 10:33:28 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/02 19:41:46 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/04 12:26:25 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,68 +43,53 @@ void	show_menu(int option)
 	}
 }
 
+std::string	get_input(std::string target, int mode)
+{
+	std::string	input;
+
+	do
+	{
+		std::cout << target;
+		std::getline(std::cin, input);
+		if (!input.c_str() || std::cin.eof())
+			return (NULL);
+		if (input[0] == '\n')
+			std::cout << "Error: File must be filled" << std::endl;
+		if (mode == PHONE_NUMBER)
+		{
+			for (int i = 0; input[i] != '\n'; i++)
+				{
+					if (input[i] < '0' || input[i] > '9')
+					{
+						std::cout << "Error: Phone Number must be filled with numbers" << std::endl;
+						continue;
+					}
+				}
+		}
+	} while (input[0] == '\n');
+	return (input);
+}
+
 int	menu_add_contact(PhoneBook phone)
 {
 	std::string first_name, last_name, nickname, phone_number, dark_secret;
 	
 	show_menu(ADD);
-	do
-	{
-		std::cout << "                          Name: ";
-		std::getline(std::cin, first_name);
-		if (!first_name.c_str() || std::cin.eof())
-			return (FAILURE);
-		if (first_name[0] == '\n')
-			std::cout << "Error: File must be filled" << std::endl;
-	} while (first_name[0] == '\n');
-
-	do
-	{
-		std::cout << "                     Last Name: ";
-		std::getline(std::cin, last_name);
-		if (!last_name.c_str() || std::cin.eof())
-			return (FAILURE);
-		if (last_name[0] == '\n')
-			std::cout << "Error: File must be filled" << std::endl;
-	} while (last_name[0] == '\n');
-
-	do
-	{
-		std::cout << "                      Nickname: ";
-		std::getline(std::cin, nickname);
-		if (!nickname.c_str() || std::cin.eof())
-			return (FAILURE);
-		if (nickname[0] == '\n')
-			std::cout << "Error: File must be filled" << std::endl;
-	} while (nickname[0] == '\n');
-
-	do
-	{
-		std::cout << "                  Phone Number: ";
-		std::getline(std::cin, phone_number);
-		if (!phone_number.c_str() || std::cin.eof())
-			return (FAILURE);
-		if (phone_number[0] == '\n')
-			std::cout << "Error: File must be filled" << std::endl;
-		for (int i = 0; phone_number[i] != '\n'; i++)
-		{
-			if (phone_number[i] < '0' || phone_number[i] > '9')
-			{
-				std::cout << "Error: Phone Number must be filled with numbers" << std::endl;
-				continue;
-			}
-		}
-	} while (phone_number[0] == '\n');
-
-	do
-	{
-		std::cout << "               Darkest Secret: ";
-		std::getline(std::cin, dark_secret);
-		if (!dark_secret.c_str() || std::cin.eof())
-			return (FAILURE);
-		if (dark_secret[0] == '\n')
-			std::cout << "Error: File must be filled" << std::endl;
-	} while (dark_secret[0] == '\n');
+	first_name = get_input("                          Name: ", STRING);
+	if (fisrt_nane.empty())
+		return(FAILURE);
+	last_name = get_input("                     Last Name: ", STRING);
+	if (last_name.empty())
+		return(FAILURE);
+	nickname = get_input("                      Nickname: ", STRING);
+	if (nickname.empty())
+		return(FAILURE);
+	phone_number = get_input("                  Phone Number: ", PHONE_NUMBER);
+	if (phone_number.empty())
+		return(FAILURE);
+	dark_secret = get_input("                Darkest Secret: ", STRING);
+	if (dark_secret.empty())
+		return(FAILURE);
 	phone.add_contact(first_name, last_name, nickname, phone_number, dark_secret);
 	return (SUCCESS);
 }
