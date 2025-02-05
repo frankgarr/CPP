@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 11:56:36 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/04 12:03:55 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/05 13:47:26 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class PhoneBook
 {
 	public:
 		PhoneBook(void);
+		int			can_be_searched(int index);
 		void		add_contact(std::string first_name, std::string last_name, 
 						std::string nickname, std::string phone, std::string dark_secret);
 		std::string	search_contact(int num, int option);

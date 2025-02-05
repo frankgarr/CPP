@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 19:51:10 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/04 11:51:42 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/05 13:57:13 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 enum content
 {
-	FISRT_NAME = 0,
+	FIRST_NAME = 0,
 	LAST_NAME,
 	NICKNAME,
 	PHONE,
