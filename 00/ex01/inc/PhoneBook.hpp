@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 11:56:36 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/05 13:47:26 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/06 10:57:46 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include <string>
 # include <iostream>
+# include <cstdlib>
 
 # define CLEAR_SCREEN "\x1b[1J \x1b[H"
 # define FAILURE 1

@@ -6,17 +6,17 @@
 #    By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:11:27 by frankgar          #+#    #+#              #
-#    Updated: 2025/01/28 12:12:57 by frankgar         ###   ########.fr        #
+#    Updated: 2025/02/06 12:12:48 by frankgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phonebook
 
-FLAGS = -Wall -Werror -Wextra -std=c++98
+FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp
+SRC = main.cpp Contact.cpp PhoneBook.cpp
 
 
 INCLUDES = -I ./inc/
@@ -38,12 +38,14 @@ dir:
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.cpp Makefile
 	$(CPP) $(FLAGS) -MMD -c $< -o $@ $(INCLUDES)
 	echo "Compiled $<"
-	sleep 1
-	clear
 
 $(NAME): $(OBJ) Makefile
 	$(CPP) $(FLAGS) $(OBJ) -o $@ $(INCLUDES)
+	sleep 1
+	clear
 	echo "[ $(NAME) ] Created"
+	sleep 1
+	clear
 
 clean:
 	rm -rf $(DIR_OBJ)

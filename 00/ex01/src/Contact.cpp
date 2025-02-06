@@ -6,13 +6,13 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:47:53 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/05 13:25:24 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/06 10:51:01 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <Contact.hpp>
 
-void Contact::Contact(void)
+Contact::Contact(void)
 {
 	this->first_name.assign(10, ' ');
 	this->last_name.assign(10, ' ');
@@ -31,7 +31,7 @@ void	Contact::set_contact(std::string first_name, std::string last_name,
 	this->dark_secret = dark_secret;
 }
 
-std::string	get_content(int option)
+std::string	Contact::get_content(int option)
 {
 	switch (option)
 	{
@@ -46,4 +46,8 @@ std::string	get_content(int option)
 		case DARK_SECRET:
 			return (this->dark_secret);
 	}
+	return (NULL);
 }
+
+Contact::~Contact(void)
+{}
