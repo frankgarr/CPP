@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 10:33:28 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/06 12:18:37 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/08 12:35:59 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	show_menu(int option)
 			std::cout << "            [ SELECT THE CONTACT THAT YOU WANT TO SEARCH ]" << std::endl;
 			std::cout << "                             [ 0 = EXIT ]" << std::endl;
 			std::cout << "----------------------------------------------------------------------" << std::endl;
-			std::cout << "        |   INDEX  |FIRST NAME|LAST NAME | NICKNAME |" << std::endl;
+			std::cout << "        |   INDEX  |FIRST NAME| LAST NAME| NICKNAME |" << std::endl;
 			std::cout << "        |----------|----------|----------|----------|" << std::endl;
 			break;
 		}
@@ -75,6 +75,19 @@ std::string	get_input(std::string target, int mode)
 	return (input);
 }
 
+std::string	expand_special_characters(const std::string &input)
+{
+	std::string expanded;
+	for (size_t i = 0; i < input.length(); i++)
+	{
+		if (input[i] == '\t')
+		    expanded += "    ";
+		else
+		    expanded += input[i];
+	}
+	return (expanded);
+}
+
 int	menu_add_contact(PhoneBook &phone)
 {
 	std::string first_name, last_name, nickname, phone_number, dark_secret;
@@ -95,6 +108,11 @@ int	menu_add_contact(PhoneBook &phone)
 	dark_secret = get_input("                Darkest Secret: ", STRING);
 	if (!dark_secret.c_str())
 		return(FAILURE);
+	first_name = expand_special_characters(first_name);
+	last_name = expand_special_characters(last_name);
+	nickname = expand_special_characters(nickname);
+	phone_number = expand_special_characters(phone_number);
+	dark_secret = expand_special_characters(dark_secret);
 	phone.add_contact(first_name, last_name, nickname, phone_number, dark_secret);
 	return (SUCCESS);
 }
@@ -142,7 +160,12 @@ int	menu_search_contact(PhoneBook &phone)
 		if (is_num) 
 		{
 			index = std::atoi(input.c_str());
-			if (index == 0)
+			if (input.size() > 1)
+			{
+				std::cout << "                        Error: number too big" << std::endl;
+				is_num = false;
+			}
+			else if (index == 0)
 				;
 			else if (phone.can_be_searched(index - 1) == SUCCESS)
 			{
@@ -156,7 +179,8 @@ int	menu_search_contact(PhoneBook &phone)
 			}
 			else
 			{
-				std::cout << "                        Contact not found" << std::endl;
+				if (input.size())
+					std::cout << "                        Contact not found" << std::endl;
 				is_num = false;
 			}
 		}

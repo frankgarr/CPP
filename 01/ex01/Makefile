@@ -5,19 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/18 17:11:27 by frankgar          #+#    #+#              #
-#    Updated: 2025/02/08 12:54:56 by frankgar         ###   ########.fr        #
+#    Created: 2025/02/07 10:18:31 by frankgar          #+#    #+#              #
+#    Updated: 2025/02/10 10:44:02 by frankgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = more_brainz
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
-
+SRC = main.cpp zombieHorde.cpp Zombie.cpp 
 
 INCLUDES = -I ./inc/
 DIR_SRC = ./src
@@ -48,15 +47,17 @@ $(NAME): $(OBJ) Makefile
 	clear
 
 clean:
-	clear
 	rm -rf $(DIR_OBJ)
 	echo "DEPENDENCIES Erased"
+	sleep 1
+	clear
 
 fclean:
-	clear
 	rm -rf $(DIR_OBJ)
 	rm -rf $(NAME)
 	echo "FULL CLEAN Made"
+	sleep 1
+	clear
 
 re: fclean all
 

@@ -6,7 +6,7 @@
 #    By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:11:27 by frankgar          #+#    #+#              #
-#    Updated: 2025/02/08 12:54:56 by frankgar         ###   ########.fr        #
+#    Updated: 2025/02/06 12:12:48 by frankgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,13 +48,11 @@ $(NAME): $(OBJ) Makefile
 	clear
 
 clean:
-	clear
 	rm -rf $(DIR_OBJ)
 	echo "DEPENDENCIES Erased"
+	echo "$(OBJ)"
 
-fclean:
-	clear
-	rm -rf $(DIR_OBJ)
+fclean: clean
 	rm -rf $(NAME)
 	echo "FULL CLEAN Made"
 
