@@ -10,50 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Zombie.h>
+#include <string>
+#include <cstring>
+#include <cstdlib>
+#include <iostream>
 
 int	main(void)
 {
-	try
-	{
-		Zombie *juan = newZombie("Juan");
-		juan->announce();
-		delete juan;
-	}
-	catch (...)
-	{
-		std::cerr << "Error: NULL param" << std::endl;
-	}
-	try
-	{
-		randomChump("Pepe Balderrama");
-	}
-	catch (...)
-	{
-		std::cerr << "Error: NULL param" << std::endl;
-	}
-	try
-	{
-		Zombie *danny = newZombie("Dannyel");
-		danny->announce();
-		delete danny;
-	}
-	catch (...)
-	{
-		std::cerr << "Error: NULL param" << std::endl;
-	}
-	std::cout << "OH NOOO!!! DANNYEL CALLED SOME FRIENDS 😰 THERE COMES THE FILLER ZOMBIES 🧟" << std::endl;
-	for (int i = 1; i < 6; i++)
-	{
-		std::cout << "🧟Filler Zombie " << i;
-		try
-		{
-			randomChump("");
-		}
-		catch (...)
-		{
-			std::cerr << "Error: NULL param" << std::endl;
-		}
-	}
-	std::cout << "OOOFFFFFF, Luckily they've left 😓" << std::endl;
+	std::string	brain = "HI THIS IS BRAIN";
+	std::string *stringPTR = &brain;
+	std::string &stringREF = brain;
+
+
+    std::cout << "Memories addresses of:\n" << std::endl;
+	std::cout << "brain = " << &brain << std::endl;
+	std::cout << "stringPTR = " << stringPTR << std::endl;
+	std::cout << "stringREF = " << &stringREF << std::endl;
+	std::cout << "----------------------------" << std::endl;
+    std::cout << "Values of:\n" << std::endl;
+	std::cout << "brain = " << brain << std::endl;
+	std::cout << "stringPTR = " << *stringPTR << std::endl;
+	std::cout << "stringREF = " << stringREF << std::endl;
+	std::cout << "----------------------------" << std::endl;
+	return (EXIT_SUCCESS);
 }

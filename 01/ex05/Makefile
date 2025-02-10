@@ -50,13 +50,18 @@ $(NAME): $(OBJ) Makefile
 clean:
 	rm -rf $(DIR_OBJ)
 	echo "DEPENDENCIES Erased"
-	echo "$(OBJ)"
+	sleep 1
+	clear
 
-fclean: clean
+fclean:
+	rm -rf $(DIR_OBJ)
 	rm -rf $(NAME)
 	echo "FULL CLEAN Made"
+	sleep 1
+	clear
 
 re: fclean all
 
 .PHONY: fclean all clean re dir
 .SILENT:
+

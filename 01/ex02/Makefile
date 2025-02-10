@@ -10,16 +10,14 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = hi_this_is_brain
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp
 
-
-INCLUDES = -I ./inc/
 DIR_SRC = ./src
 DIR_OBJ = $(DIR_SRC)/obj
 
@@ -36,11 +34,11 @@ dir:
 	mkdir -p $(DIR_OBJ)
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.cpp Makefile
-	$(CPP) $(FLAGS) -MMD -c $< -o $@ $(INCLUDES)
+	$(CPP) $(FLAGS) -MMD -c $< -o $@
 	echo "Compiled $<"
 
 $(NAME): $(OBJ) Makefile
-	$(CPP) $(FLAGS) $(OBJ) -o $@ $(INCLUDES)
+	$(CPP) $(FLAGS) $(OBJ) -o $@
 	sleep 1
 	clear
 	echo "[ $(NAME) ] Created"
@@ -50,11 +48,15 @@ $(NAME): $(OBJ) Makefile
 clean:
 	rm -rf $(DIR_OBJ)
 	echo "DEPENDENCIES Erased"
-	echo "$(OBJ)"
+	sleep 1
+	clear
 
-fclean: clean
+fclean:
+	rm -rf $(DIR_OBJ)
 	rm -rf $(NAME)
 	echo "FULL CLEAN Made"
+	sleep 1
+	clear
 
 re: fclean all
 
