@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 17:45:47 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/08 12:31:57 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/11 10:06:35 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	PhoneBook::add_contact(std::string first_name, std::string last_name,
 
 int	PhoneBook::can_be_searched(int index)
 {
-	if (index > 0 && index < 8 && index < this->last_mod)
+	if (index >= 0 && index < 8 && index < this->last_mod)
 		return (SUCCESS);
 	return (FAILURE);
 }

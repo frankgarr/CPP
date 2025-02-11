@@ -6,7 +6,7 @@
 /*   By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 00:16:40 by frankgar          #+#    #+#             */
-/*   Updated: 2025/02/09 01:09:14 by frankgar         ###   ########.fr       */
+/*   Updated: 2025/02/11 12:09:10 by frankgar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(void)
 {
 	try
 	{
-		Zombie *juan = newZombie("Juan");
+		Zombie *juan = newZombie(NULL);
 		juan->announce();
 		delete juan;
 	}

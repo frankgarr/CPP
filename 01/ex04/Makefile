@@ -6,20 +6,19 @@
 #    By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:11:27 by frankgar          #+#    #+#              #
-#    Updated: 2025/02/06 12:12:48 by frankgar         ###   ########.fr        #
+#    Updated: 2025/02/11 12:31:51 by frankgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = sed_is_for_losers 
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp
 
 
-INCLUDES = -I ./inc/
 DIR_SRC = ./src
 DIR_OBJ = $(DIR_SRC)/obj
 
@@ -36,11 +35,11 @@ dir:
 	mkdir -p $(DIR_OBJ)
 
 $(DIR_OBJ)/%.o: $(DIR_SRC)/%.cpp Makefile
-	$(CPP) $(FLAGS) -MMD -c $< -o $@ $(INCLUDES)
+	$(CPP) $(FLAGS) -MMD -c $< -o $@
 	echo "Compiled $<"
 
 $(NAME): $(OBJ) Makefile
-	$(CPP) $(FLAGS) $(OBJ) -o $@ $(INCLUDES)
+	$(CPP) $(FLAGS) $(OBJ) -o $@
 	sleep 1
 	clear
 	echo "[ $(NAME) ] Created"

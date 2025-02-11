@@ -6,17 +6,17 @@
 #    By: frankgar <frankgar@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 17:11:27 by frankgar          #+#    #+#              #
-#    Updated: 2025/02/06 12:12:48 by frankgar         ###   ########.fr        #
+#    Updated: 2025/02/11 12:23:14 by frankgar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = violence
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp 
 
 
 INCLUDES = -I ./inc/
