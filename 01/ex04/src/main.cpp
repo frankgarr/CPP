@@ -96,14 +96,14 @@ bool	replace_words_file(char *name, char *search, char *replace)
 	return (EXIT_SUCCESS);
 }
 
-int	main(int ac, char **av)
+int	main(int argc, char **argv)
 {
-	if (ac != 4)
+	if (argc != 4)
 		return (msg_error("", ERROR_INV_ARGS));
-	if (!*av[1] || !*av[2] || !*av[3])
-		return ((!*av[1] && msg_error("file", ERROR_EMPTY_FL))
-			  || (!*av[2] && msg_error("word", ERROR_EMPTY_WD))
-			  || (!*av[3] && msg_error("word", ERROR_EMPTY_WD)));
-	replace_words_file(av[1], av[2], av[3]);
+	if (!*argv[1] || !*argv[2] || !*argv[3])
+		return ((!*argv[1] && msg_error("file", ERROR_EMPTY_FL))
+			  || (!*argv[2] && msg_error("word", ERROR_EMPTY_WD))
+			  || (!*argv[3] && msg_error("word", ERROR_EMPTY_WD)));
+	replace_words_file(argv[1], argv[2], argv[3]);
 	return (EXIT_SUCCESS);
 }

@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = harl
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp Contact.cpp PhoneBook.cpp
+SRC = main.cpp Harl.cpp
 
 
 INCLUDES = -I ./inc/
