@@ -21,6 +21,6 @@ int	main(void)
 	harl.complain("WARNING");
 	harl.complain("ERROR");
 	harl.complain("NOTHING");
-	hJ
+	harl.complain("");
 	return (EXIT_SUCCESS);
 }
