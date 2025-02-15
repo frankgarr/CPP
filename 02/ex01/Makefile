@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = 
+NAME =  more_useful_number_class
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp 
+SRC = main.cpp Fixed.cpp
 
 
 INCLUDES = -I ./inc/

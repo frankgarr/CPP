@@ -18,11 +18,9 @@ CPP = c++
 
 SRC = main.cpp Fixed.cpp
 
-
 INCLUDES = -I ./inc/
 DIR_SRC = ./src
 DIR_OBJ = $(DIR_SRC)/obj
-
 
 OBJ = $(addprefix $(DIR_OBJ)/, $(SRC:.cpp=.o))
 DEP = $(addprefix $(DIR_OBJ)/, $(SRC:.cpp=.d))
