@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = violence
+NAME = repetitive_work
 
 FLAGS = -Wall -Werror -Wextra -std=c++98 -g
 
 CPP = c++
 
-SRC = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 
 INCLUDES = -I ./inc/
